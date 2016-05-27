@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+	<meta charset="UTF-8">
+	{# <title>jinja2 blog</title> #}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'main.css') }}">
+	<title>{% block title %}{% endblock %} My WebPage</title>
+{% endblock %}
+</head>
+<body>
+<nav>
+	<ul>
+		<li><a href="/" title="">main</a></li>
+		<li><a href="/blog" title="">blog</a></li>
+		<li><a href="/about" title="">about</a></li>
+		{# <li><a href="" title=""></a></li> #}
+	</ul>
+</nav>
+
+
+{% if name %}
+<h1>Hello {{name}}!</h1>
+{% else %}
+<h1>Hello Nobody!</h1>
+{% endif %}
+
+</body>
+</html>
