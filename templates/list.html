@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block csshref %}
+href="static/list.css" 
+{% endblock %}
+
+
+{% block header %}
+	<h1>list.html</h1>
+{% endblock %}
+
+{% block content %}
+<p>文章列表</p>
+	{# <h2>len of art_arr = {{ art_arr }}</h2> #}
+	<ul>
+	{% for key in art_dic %}
+		<li><a href="/article/{{ art_dic[key].id }}">{{ art_dic[key].title |e}}</a></li>
+	{% endfor %}
+	</ul>
+		
+{% endblock %}
+
